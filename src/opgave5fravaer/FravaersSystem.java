@@ -1,5 +1,7 @@
 package opgave5fravaer;
 
+import java.util.Arrays;
+
 public class FravaersSystem {
 	/**
 	 * Fraværstallene udskrives på skærmen
@@ -7,7 +9,23 @@ public class FravaersSystem {
 	 * @param fravaer
 	 */
 	public void udskrivFravaer(int[][] fravaer) {
-		// TODO opgave 5.1
+		System.out.printf("%10s","Elev\\Måned");
+		for (int i = 1; i <= fravaer[0].length; i++) {
+			System.out.printf("%4d", i);
+		}
+		System.out.println();
+		System.out.println("----------------------------------------------------------");
+		int j = 1;
+
+		for (int[] ints : fravaer) {
+
+			System.out.printf("%8d |",j);
+			j++;
+			for (int i : ints) {
+				System.out.printf("%4d",i);
+			}
+			System.out.println();
+		}
 	}
 
 	/**
@@ -19,8 +37,12 @@ public class FravaersSystem {
 	 * @return
 	 */
 	public int samletFravaer(int[][] fravaer, int elevNr) {
-		// TODO opgave 5.2
-		return -1;
+		int res = 0;
+		for (int i = 0; i < fravaer.length; i++) {
+				res += fravaer[i][elevNr];
+
+		}
+		return res;
 	}
 
 	/**
@@ -32,8 +54,13 @@ public class FravaersSystem {
 	 * @return
 	 */
 	public double gennemsnit(int[][] fravaer, int elevNr) {
-		// TODO opgave 5.3
-		return -1;
+		int res = 0;
+		double count = 0.0;
+		for (int i = 0; i < fravaer.length; i++) {
+			res += fravaer[i][elevNr];
+			count++;
+		}
+		return res/count;
 	}
 
 	/**
@@ -43,8 +70,17 @@ public class FravaersSystem {
 	 * @return
 	 */
 	public int antalUdenFravaer(int[][] fravaer) {
-		// TODO opgave 5.4
-		return -1;
+		int res = 0;
+		for (int i = 0; i < fravaer.length; i++) {
+			int elev = 0;
+			for (int j = 0; j < fravaer[i].length; j++) {
+				if (fravaer[i][j] == 0 && elev == 0){
+					elev++;
+					res++;
+				}
+			}
+		}
+		return res;
 	}
 
 	/**
@@ -56,8 +92,21 @@ public class FravaersSystem {
 	 * @return
 	 */
 	public int mestFravaer(int[][] fravaer) {
-		// TODO opgave 5.5
-		return -1;
+		int max = -1;
+		int maxElevNr = 0;
+		int elevNr = 0;
+		for (int[] elev: fravaer) {
+			int sum = 0;
+			elevNr++;
+			for (int f : elev) {
+				sum += f;
+			}
+			if (max < sum){
+				max = sum;
+				maxElevNr = elevNr;
+			}
+		}
+		return maxElevNr;
 	}
 
 	/**
@@ -68,6 +117,10 @@ public class FravaersSystem {
 	 * @param elevNr
 	 */
 	public void nulstil(int[][] fravaer, int elevNr) {
-		// TODO opgave 5.6
+		for (int i = 0; i < fravaer.length; i++) {
+			for (int j = 0; j < fravaer[i].length; j++) {
+				fravaer[i][j] = 0;
+			}
+		}
 	}
 }
