@@ -12,6 +12,12 @@ public class AfproevFravaersSystem {
         System.out.println();
 
         //TODO opgave 5.7
+        System.out.println(fraværsSystem.antalUdenFravaer(fravær));
+        System.out.println(fraværsSystem.mestFravaer(fravær));
+        System.out.println(fraværsSystem.samletFravaer(fravær, 4));
+        System.out.println(fraværsSystem.gennemsnit(fravær, 4));
+        fraværsSystem.nulstil(fravær,4);
+        fraværsSystem.udskrivFravaer(fravær);
 
     }
 }
