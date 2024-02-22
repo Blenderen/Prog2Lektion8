@@ -46,15 +46,40 @@ public class TwoDimensionalIntArray {
 
     public void print() {
         for (int[] ints : intArray) {
-            for (int anint : ints) {
-                System.out.printf("%4d",anint);
+            for (int i : ints) {
+                System.out.printf("%4d",i);
             }
+            System.out.println();
         }
 
     }
 
     public void map(IntFunction function) {
+
     }
 
+    public static double averageMajorDiagonal(double[][] m){
+        double sum = 0;
+        double count = 0;
+        for (int i = 0; i < m.length; i++) {
+            sum += m[i][i];
+            count++;
+        }
+        return sum/count;
+    }
 
+    public static int[] locateSmallest(double[][] a){
+        int[] res = new int[2];
+        double smallest = a[0][0];
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a[i].length; j++) {
+                if (a[i][j] < smallest) {
+                    smallest = j;
+                    res[0] = i;
+                    res[1] = j;
+                }
+            }
+        }
+        return res;
+    }
 }

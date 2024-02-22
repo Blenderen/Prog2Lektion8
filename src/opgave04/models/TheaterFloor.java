@@ -20,6 +20,7 @@ public class TheaterFloor {
 
     public boolean buySeat(int row, int seat) {
         // TODO
+
         return false;
     }
 
