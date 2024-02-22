@@ -33,6 +33,7 @@ public class TheaterFloor {
 	 * @param price
 	 * @return
 	 */
+
 	public boolean buySeat(int price) {
 		for (int i = 0; i < seats.length; i++) {
 			for (int j = 0; j < seats[i].length; j++) {
@@ -47,7 +48,6 @@ public class TheaterFloor {
 	}
 
 	public void printTheaterFloor() {
-		// TODO
 		System.out.println("De ledige pladser er angivet med deres pris");
 		System.out.printf("%9s","Sæde :");
 		for (int i = 1; i <= seats[0].length; i++) {

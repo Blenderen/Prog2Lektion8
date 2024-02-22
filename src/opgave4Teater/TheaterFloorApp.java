@@ -8,6 +8,7 @@ public class TheaterFloorApp {
 		theater.printTheaterFloor();
 		theater.buySeat(20);
 		theater.buySeat(3,6);
+		System.out.println(theater.buySeat(3, 6));
 		theater.printTheaterFloor();
 	}
 }
