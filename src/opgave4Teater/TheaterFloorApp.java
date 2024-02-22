@@ -6,5 +6,8 @@ public class TheaterFloorApp {
 		TheaterFloor theater = new TheaterFloor();
 		// TODO
 		theater.printTheaterFloor();
+		theater.buySeat(20);
+		theater.buySeat(3,6);
+		theater.printTheaterFloor();
 	}
 }

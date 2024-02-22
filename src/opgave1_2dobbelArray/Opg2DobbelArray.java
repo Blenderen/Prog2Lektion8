@@ -68,24 +68,11 @@ public class Opg2DobbelArray {
         // TODO Opgave 2.4 lav ændringer i values så den har skiftende 0'er og 1'er som på et
         // skakbræt
         for (int i = 0; i < values.length; i++) {
-            if (i%2 == 0) {
-                for (int j = 0; j < values[i].length; j++) {
-                    if (j%2==0) {
-                        values[i][j] = 1;
-                    } else {
-                        values[i][j] = 0;
-                    }
-                }
-            } else {
-                for (int j = 0; j < values[i].length; j++) {
-                    if (j%2==0) {
-                        values[i][j] = 0;
-                    } else {
-                        values[i][j] = 1;
-                    }
-                }
+            for (int j = 0; j < values[i].length; j++) {
+                values[i][j] = (i+j)%2;
             }
         }
+
         System.out.println();
         System.out.println("Nedenfor skulle der stå 0 og 1 på alle pladser som på skakbræt");
         System.out.println();
