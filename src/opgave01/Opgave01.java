@@ -11,10 +11,10 @@ public class Opgave01 {
         };
         TwoDimensionalIntArray twoDimensionalIntArray = new TwoDimensionalIntArray(numbers);
 
-//        twoDimensionalIntArray.setValueAt(2, 4, 101);
-//        System.out.println(twoDimensionalIntArray.getValueAt(2, 4));
-//        System.out.println(twoDimensionalIntArray.sumRow(1));
-//        System.out.println(twoDimensionalIntArray.sumColumn(3));
+        twoDimensionalIntArray.setValueAt(2, 4, 101);
+        System.out.println(twoDimensionalIntArray.getValueAt(2, 4));
+        System.out.println(twoDimensionalIntArray.sumRow(1));
+        System.out.println(twoDimensionalIntArray.sumColumn(3));
         twoDimensionalIntArray.print();
 
 

@@ -50,20 +50,21 @@ public class TheaterFloor {
 	public void printTheaterFloor() {
 		System.out.println("De ledige pladser er angivet med deres pris");
 		System.out.printf("%9s","Sæde :");
-		for (int i = 1; i <= seats[0].length; i++) {
-			System.out.printf("%4d", i);
+		for (int i = 0; i < seats[0].length; i++) {
+			System.out.printf("%4d", i+1);
 		}
 		System.out.println();
-		System.out.println("------------------------------------------------------");
-		int j = 1;
-		for (int[] ints : seats) {
-			System.out.printf("%9s",("Række " + j + " :"));
-			j++;
-			for (int i : ints) {
-				if (i == 0){
-					System.out.printf("%4s", "--,");
+		System.out.println("           --------------------------------------");
+
+		for (int i = 0; i < seats.length; i++) {
+			System.out.printf("%9s",("Række " + (i+1) + " :  "));
+			for (int k = 0; k < seats[i].length; k++) {
+				if (seats[i][k] == 0){
+					System.out.printf("%3s ", "--,");
+				} else if (seats[i].length-1 == k){
+					System.out.printf("%2d ",seats[i][k]);
 				} else {
-					System.out.printf("%4d",i);
+					System.out.printf("%2d, ",seats[i][k]);
 				}
 			}
 			System.out.println();

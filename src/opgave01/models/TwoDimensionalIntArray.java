@@ -55,7 +55,6 @@ public class TwoDimensionalIntArray {
     }
 
     public void map(IntFunction function) {
-
     }
 
     public static double averageMajorDiagonal(double[][] m){
